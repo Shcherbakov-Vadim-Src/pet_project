@@ -5,18 +5,8 @@ import {BuildOptions} from "./types/config";
 export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
 
     const svgLoader = {
-        test: /\.svg$/i,
-        issuer: /\.[jt]sx?$/,
+        test: /\.svg$/,
         use: ['@svgr/webpack'],
-    }
-
-    const fileLoader = {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
     }
 
     const cssLoader = {
@@ -45,10 +35,19 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     }
 
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    }
+
     return [
+        fileLoader,
+        svgLoader,
         typescriptLoader,
         cssLoader,
-        svgLoader,
-        fileLoader,
     ]
 }
