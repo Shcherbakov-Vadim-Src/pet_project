@@ -30,35 +30,32 @@
 }
 
 .square {
-    padding: 0px;
+    padding: 0;
 }
 
 .square.size_m {
     width: var(--font-line-m);
     height: var(--font-line-m);
-    font-size: var(--font-size-m);
 }
 
 .square.size_l {
     width: var(--font-line-l);
     height: var(--font-line-l);
-    font-size: var(--font-size-l);
 }
 
 .square.size_xl {
     width: var(--font-line-xl);
     height: var(--font-line-xl);
-    font-size: var(--font-size-xl);
 }
 
 .size_m {
-    font-size: var(--font-size-m);
+    font: var(--font-m);
 }
 
 .size_l {
-    font-size: var(--font-size-l);
+    font: var(--font-l);
 }
 
 .size_xl {
-    font-size: var(--font-size-xl);
+    font: var(--font-xl);
 }
